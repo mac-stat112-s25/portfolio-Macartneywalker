@@ -3,3 +3,13 @@ title: "Trivariate Viz"
 ---
 
 Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+```{r fig.width = 8, fig.height = 5.5}
+  #| fig_cap: "Bechdel Test results from Movies from 1969-2014 per Half Decades" 
+  #| fig_alt: "the plot shows the results from the Bechdel test of movies from 1969-2014. Movies passing the test peaked in the 90s. 
+ggplot(new_bechdel, aes(fill = clean_test, x = half_decades)) +
+  geom_bar(position = "fill") +
+  labs(y = "Scores", x = "Half Decades", legend = "Results", title = "Results of Bechdel Test in movies from 1969-2014") +
+  scale_fill_viridis_d() 
+```
+
+

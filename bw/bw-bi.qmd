@@ -1,5 +1,17 @@
 ---
 title: "Bivariate Viz"
 ---
+```{r}
+library(ggplot2)
+```
 
 Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.
+```{r}
+#|alt_cap: "how many chesses are in each chesse family and how amny are vegetarian"
+#|alt_fig: "caciotta cheese has no vegetarian chesses, gorgonzola is all vegetarian. "
+ggplot(cheeses, aes(fill = vegetarian, y = family)) + 
+  geom_bar(position = "fill") +
+  scale_fill_viridis_d() +
+  labs(x = "Amount of Cheeses", y = "Family of Cheese", color = "whether the chesse is vegetarian or not", title = "What Chesses in each Cheese Family are Vegetarian?" )
+```
+

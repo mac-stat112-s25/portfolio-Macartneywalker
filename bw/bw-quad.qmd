@@ -3,3 +3,16 @@ title: "Quadvariate Viz"
 ---
 
 Use this file to generate a professional looking **quadvariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+
+
+```{r}
+#|alt_cap: "Attendance of World Cup Matches per Year with Indication of Hosts and Winners per Game."
+#|alt_fig: "This Plot shows which Teams Hosted and won the World Cup, it also shows and the Year and Attendance on the Game."
+world_cup %>%
+  ggplot() +
+    geom_point(aes(color = host, y = attendance, x = year, size = winner )) + 
+  labs(x = "Year of Game", y ="Attendance", title = "Attendance of World Cup Matches per Year with Indication of Hosts and Winners per Game." )
+
+  
+```
+

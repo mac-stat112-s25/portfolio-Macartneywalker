@@ -3,3 +3,22 @@ title: "Spatial Viz"
 ---
 
 Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+```{r}
+ #| fig-cap: "US Starbucks per 1000 of American People."
+ #| fig-alt: "this map is a cholorpleth map of the united states that shows population in color and starbucks locations with black dots. more black dots are in heavily popualted areas like the west coast and east coast, the western midwest is sparser in starbucks."
+starbucks_with_2018_pop_est %>%
+ggplot() +
+  geom_map(map = states_map, aes(map_id = state_name, fill = starbucks_per_10000)) +
+  geom_point(
+    data = starbucks_us,
+    aes(x = Longitude, y = Latitude),
+    size = 0.05,
+    alpha = 0.2,
+    inherit.aes = FALSE
+  ) +
+  expand_limits(x = states_map$long, y = states_map$lat) +
+  theme_map() + 
+    labs(title = "US starbucks per 1000 people", color = "starbucks_per_1000") +
+  scale_fill_viridis_b()
+```
+
