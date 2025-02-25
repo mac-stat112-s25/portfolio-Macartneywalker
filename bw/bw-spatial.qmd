@@ -1,6 +1,39 @@
 ---
 title: "Spatial Viz"
 ---
+```{r}
+library(tidyr)
+library(ggplot2)
+library(tidyverse)
+library(openintro)
+library(ggthemes)
+library(rnaturalearth)
+```
+```{r}
+world_boundaries <- ne_countries(returnclass = "sf")
+states_map <- map_data("state")
+starbucks <- read.csv("https://mac-stat.github.io/data/starbucks.csv")
+starbucks_us_by_state <- starbucks |>
+  filter(Country == "US") |>
+  count(State.Province) |>
+  mutate(state_name = str_to_lower(abbr2state(State.Province)))
+starbucks_contiguous_us <- starbucks |>
+  filter(Country == "US", State.Province != "AK", State.Province != "HI")
+census_pop_est_2018 <- read_csv("https://mac-stat.github.io/data/us_census_2018_state_pop_est.csv") |>
+  separate(state, into = c("dot", "state"), extra = "merge") |>
+  select(-dot) |>
+  mutate(state = str_to_lower(state))
+
+starbucks_with_2018_pop_est <-
+  starbucks_us_by_state |>
+  left_join(census_pop_est_2018,
+    by = c("state_name" = "state")
+  ) |>
+  mutate(starbucks_per_10000 = (n / est_pop_2018) * 10000)
+starbucks_us <- starbucks |> 
+  filter(Country == "US")
+
+```
 
 Use this file to generate a professional looking **spatial** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
 ```{r}

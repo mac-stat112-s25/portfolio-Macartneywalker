@@ -4,6 +4,9 @@ title: "Bivariate Viz"
 ```{r}
 library(ggplot2)
 ```
+```{r}
+cheeses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-06-04/cheeses.csv')
+```
 
 Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.
 ```{r}

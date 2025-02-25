@@ -11,6 +11,7 @@ head(education)
 ```
 ```{r}
 library(ggplot2)
+library(tidyverse)
 ```
 ```{r}
 
@@ -76,18 +77,18 @@ plot_data <- education |>
 # Load the gplots package needed for heatmaps
 library(gplots)
 
-# Construct heatmap 1
-heatmap.2(plot_data,
-  dendrogram = "none",
-  Rowv = NA, 
-  scale = "column",
-  keysize = 0.7, 
-  density.info = "none",
-  col = hcl.colors(256), 
-  margins = c(10, 20),
-  colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),
-  sepcolor = "white", trace = "none"
-)
+# # Construct heatmap 1
+# heatmap.2(plot_data,
+#   dendrogram = "none",
+#   Rowv = NA, 
+#   scale = "column",
+#   keysize = 0.7, 
+#   density.info = "none",
+#   col = hcl.colors(256), 
+#   margins = c(10, 20),
+#   colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),
+#   sepcolor = "white", trace = "none"
+# )
 ```
 
 ```{r}
@@ -99,16 +100,16 @@ weather <- read.csv("https://mac-stat.github.io/data/weather_3_locations.csv") |
 
 
 # Construct heatmap 1
-heatmap.2(plot_data,
-  dendrogram = "none",
-  Rowv = NA, 
-  scale = "column",
-  keysize = 0.7, 
-  density.info = "none",
-  col = hcl.colors(256), 
-  margins = c(10, 20),
-  colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),
-  sepcolor = "white", trace = "none"
-)
+# heatmap.2(plot_data,
+#   dendrogram = "none",
+#   Rowv = NA, 
+#   scale = "column",
+#   keysize = 0.7, 
+#   density.info = "none",
+#   col = hcl.colors(256), 
+#   margins = c(10, 20),
+#   colsep = c(1:7), rowsep = (1:50), sepwidth = c(0.05, 0.05),
+#   sepcolor = "white", trace = "none"
+# )
 ```
 

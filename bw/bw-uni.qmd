@@ -1,5 +1,20 @@
 ---
 title: "Univariate Viz"
 ---
+```{r}
+library(ggplot2)
+```
+```{r}
+cheeses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2024/2024-06-04/cheeses.csv')
+```
 
 Use this file to generate a professional looking **univariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+```{r}
+ #|fig_cap: "Whether Chesses are Vegtarian or Not"
+ #|fig_alt: "This Plot shows the Amount of Chesses that are Considered Vegetarian by Chesse.com."
+ggplot(cheeses, aes(x = vegetarian)) +
+  geom_bar() +
+  theme_classic()+
+  labs(x = "Vegetarian", y = "chesse count", title = "Amount of Cheeses that are Vegetarian or Not.")
+```
+

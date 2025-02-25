@@ -1,6 +1,9 @@
 ---
 title: "Univariate Viz"
 ---
+```{r}
+library(ggplot2)
+```
 
 Use this file for practice with the **univariate viz** in-class activity.  Refer to the class website for details.
 # Import data
