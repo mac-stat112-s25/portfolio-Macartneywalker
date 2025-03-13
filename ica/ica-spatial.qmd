@@ -3,3 +3,255 @@ title: "Spatial Viz"
 ---
 
 Use this file for practice with the **spatial viz** in-class activity.  Refer to the class website for details.
+```{r}
+
+# Load tidyverse package for plotting and wrangling
+library(tidyverse)
+
+# Import the data and only keep 2 addresses
+energy <- read.csv("https://mac-stat.github.io/data/MacNaturalGas.csv") |> 
+  mutate(date = as.Date(paste0(month, "/1/", year), "%m/%d/%Y")) |> 
+  filter(address != "c")
+
+# Check it out
+head(energy)
+ggplot(energy, aes(x = therms, fill = address)) + 
+  geom_density(alpha = 0.5)
+```
+```{r}
+ggplot(energy, aes(y = therms, x = date, color = address)) + 
+  geom_point()
+```
+```{r}
+ggplot(energy, aes(y = therms, x = date, color = address)) + 
+  geom_line()
+```
+```{r}
+ggplot(energy, aes(y = therms, x = renovated)) + 
+  geom_boxplot() + 
+  facet_wrap(~ address)
+```
+```{r}
+# A density plot isn't very helpful for comparing typical therms in this example!
+ggplot(energy, aes(x = therms, fill = renovated)) + 
+  geom_density(alpha = 0.5) + 
+  facet_wrap(~ address)
+```
+```{r}
+# It happened to be colder outside after renovations (higher hdd)
+ggplot(energy, aes(y = hdd, x = renovated)) + 
+  geom_boxplot() + 
+  facet_wrap(~ address)
+```
+```{r}
+# When controlling for outside temps (via hdd), energy use decreased post-renovation
+ggplot(energy, aes(y = therms, x = hdd, color = renovated)) + 
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", se = FALSE) + 
+  facet_wrap(~ address)
+```
+```{r}
+# Import starbucks location data
+starbucks <- read.csv("https://mac-stat.github.io/data/starbucks.csv")
+# Don't worry about the syntax
+starbucks_mn <- starbucks |>   
+  filter(Country == "US", State.Province == "MN")
+ggplot(starbucks, aes(y = Latitude, x = Longitude)) + 
+  geom_point(size = 0.5)
+```
+```{r}
+#
+
+fave_places <- read.csv("https://hash-mac.github.io/stat112site-s25/data/our_fave_places.csv")
+
+# Check it out
+head(fave_places)
+# Load the leaflet package
+library(leaflet)
+
+# Just a plotting frame
+leaflet(data = fave_places)
+
+leaflet(data = starbucks_mn) |> 
+  addTiles() |> 
+  addMarkers()
+```
+```{r}
+# Load package needed to change color
+library(gplots)
+
+# We can add colored circles instead of markers at each location
+leaflet(data = fave_places) |> 
+  addTiles() |> 
+  addCircles(color = col2hex("red"))
+```
+```{r}
+# We can change the background
+# Mark locations with yellow dots
+# And connect the dots, in their order in the dataset, with green lines
+# (These green lines don't mean anything here, but would if this were somebody's travel path!)
+leaflet(data = fave_places) |>
+  addProviderTiles("USGS") |>
+  addCircles(weight = 10, opacity = 1, color = col2hex("yellow")) |>
+  addPolylines(
+    lng = ~longitude,
+    lat = ~latitude,
+    color = col2hex("green")
+  )
+
+```
+```{r}
+# Import starbucks location data
+starbucks <- read.csv("https://mac-stat.github.io/data/starbucks.csv")
+# Don't worry about the syntax
+starbucks_mn <- starbucks |>   
+  filter(Country == "US", State.Province == "MN")
+```
+```{r}
+# Load the package
+library(rnaturalearth)
+
+# Get info about country boundaries across the world
+# in a "sf" or simple feature format
+world_boundaries <- ne_countries(returnclass = "sf")
+# What does this code produce?
+# What geom are we using for the point map?
+ggplot(world_boundaries) + 
+  geom_sf()
+```
+```{r}
+# Load package needed to change map theme
+library(mosaic)
+
+# Add a point for each Starbucks
+# NOTE: The Starbucks info is in our starbucks data, not world_boundaries
+# How does this change how we use geom_point?!
+ggplot(world_boundaries) + 
+  geom_sf() + 
+  geom_point(
+    data = starbucks,
+    aes(x = Longitude, y = Latitude),
+    alpha = 0.3, size = 0.2, color = "darkgreen"
+  ) +
+  theme_map()
+```
+```{r}
+# We'll learn this syntax soon! Don't worry about it now.
+starbucks_cma <- starbucks |> 
+  filter(Country %in% c('CA', 'MX', 'US'))
+cma_boundaries <- ne_states(
+  country = c("canada", "mexico", "united states of america"),
+  returnclass = "sf")
+# Just the boundaries
+ggplot(cma_boundaries) + 
+  geom_sf()
+```
+```{r}
+# Add the points
+# And zoom in
+ggplot(cma_boundaries) + 
+  geom_sf() + 
+  geom_point(
+    data = starbucks_cma,
+    aes(x = Longitude, y = Latitude),
+    alpha = 0.3,
+    size = 0.2,
+    color = "darkgreen"
+  ) +
+  coord_sf(xlim = c(-179.14, -50)) +
+  theme_map()
+```
+```{r}
+starbucks_midwest <- starbucks |> 
+  filter(State.Province %in% c("MN", "ND", "SD", "WI"))
+```
+```{r}
+# Load packages
+library(sf)
+library(maps)
+
+# Get the boundaries
+midwest_boundaries <- st_as_sf(
+  maps::map("county",
+            region = c("minnesota", "wisconsin", "north dakota", "south dakota"), 
+            fill = TRUE, plot = FALSE))
+
+# Check it out
+head(midwest_boundaries)
+```
+```{r}
+ggplot(midwest_boundaries) +
+  geom_sf() +
+  geom_point(
+    data = starbucks_midwest,
+    aes(x = Longitude, y = Latitude),
+    alpha = 0.7,
+    size = 0.2,
+    color = 'darkgreen'
+  ) +
+  theme_map()
+```
+```{r}
+# Point map (we made this earlier)
+ggplot(cma_boundaries) + 
+  geom_sf() + 
+  geom_point(
+    data = starbucks_cma,
+    aes(x = Longitude, y = Latitude),
+    alpha = 0.3,
+    size = 0.2,
+    color = "darkgreen"
+  ) +
+  coord_sf(xlim = c(-179.14, -50), ylim = c(14.54, 83.11)) +
+  theme_map()
+```
+```{r}
+# What changed in the plot?
+# What changed in our code?!
+ggplot(cma_boundaries) + 
+  geom_sf() + 
+  geom_density_2d(
+    data = starbucks_cma,
+    aes(x = Longitude, y = Latitude),
+    size = 0.2,
+    color = "darkgreen"
+  ) +
+  coord_sf(xlim = c(-179.14, -50), ylim = c(14.54, 83.11)) +
+  theme_map()
+```
+```{r}
+elections_by_state <-  read.csv("https://mac-stat.github.io/data/election_2020_by_state.csv")
+elections_by_counties <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+```
+```{r}
+# Don't worry about the code!
+
+elections_by_state <- elections_by_state |> 
+  filter(state_abbr != "DC") |> 
+  select(state_name, state_abbr, repub_pct_20) |> 
+  mutate(repub_20_categories = 
+           cut(repub_pct_20, 
+               breaks = seq(30, 70, by = 5), 
+               labels = c("30-34", "35-39", "40-44", "45-49",
+                          "50-54", "55-59", "60-64", "65-70"), 
+               include.lowest = TRUE))
+
+elections_by_counties <- elections_by_counties |> 
+  select(state_name, state_abbr, county_name, county_fips,
+          repub_pct_20, median_age, median_rent) |> 
+  mutate(repub_20_categories = 
+           cut(repub_pct_20, 
+               breaks = seq(0, 100, by = 10),
+               labels = c("0-9", "10-19", "20-29", "30-39", "40-49",
+                          "50-59", "60-69", "70-79", "80-89", "90-100"),
+               include.lowest = TRUE))
+
+# Add 0's at the beginning of any fips_code that's fewer than 5 numbers long
+# Don't worry about the syntax
+elections_by_counties <- elections_by_counties |> 
+  mutate(county_fips = as.character(county_fips)) |> 
+  mutate(county_fips = 
+           ifelse(nchar(county_fips) == 4, paste0("0", county_fips), county_fips))
+```
+
+

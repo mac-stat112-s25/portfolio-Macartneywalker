@@ -12,7 +12,7 @@ Use this file to generate a professional looking **univariate** visualization. T
 ```{r}
  #|fig_cap: "Whether Chesses are Vegtarian or Not"
  #|fig_alt: "This Plot shows the Amount of Chesses that are Considered Vegetarian by Chesse.com."
-ggplot(cheeses, aes(x = vegetarian)) +
+ggplot(cheeses, na.rm = TRUE, aes(x = vegetarian)) +
   geom_bar() +
   theme_classic()+
   labs(x = "Vegetarian", y = "chesse count", title = "Amount of Cheeses that are Vegetarian or Not.")

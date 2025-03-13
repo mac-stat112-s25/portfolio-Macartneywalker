@@ -125,6 +125,9 @@ geom_density(fill = "orange")
 # Data on students in this class
 survey <- read.csv("https://hash-mac.github.io/stat112site-s25/data/survey.csv")
 
+# World Cup data
+world_cup <- read.csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/worldcups.csv")
+
 
 ```
 

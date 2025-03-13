@@ -11,18 +11,20 @@ Use this file for practice with the **bivariate viz** in-class activity.  Refer 
 survey <- read.csv("https://hash-mac.github.io/stat112site-s25/data/survey.csv")
 
 # How many students have now filled out the survey? 49
-dim(survey)
+nrow(survey)
 
 # What type of variables do we have?qualitative?
 
+str(survey)
 ```
 ```{r}
 # Attach a package needed to use the ggplot function
 
 
 # Make a ggplot
-library(ggplot2)
-ggplot(survey, aes(x = fav_temp_c, y = cafe_mac))
+library(tidyverse)
+ggplot(survey, aes(x = hangout)) +
+  geom_bar()
 # Import data
 survey <- read.csv("https://hash-mac.github.io/stat112site-s25/data/survey.csv")
 
@@ -32,7 +34,13 @@ survey <- read.csv("https://hash-mac.github.io/stat112site-s25/data/survey.csv")
 # What type of variables do we have?
 ```
 ```{r}
+ggplot(survey, aes(x = fav_temp_c)) + 
+  geom_histogram(color = "white", binwidth = 5)
 data.frame(temp_3pm = c(24, 26, 20, 15, 15, 15), temp_9am = c(14, 18, 15, 13, 11, 11))
+```
+```{r}
+ggplot(survey, aes(x = fav_temp_c)) + 
+  geom_density()
 ```
 
 ```{r}
@@ -46,7 +54,12 @@ head(elections)
 ```{r}
 # Set up the plotting frame
 # How does this differ than the frame for our histogram of repub_pct_20 alone?
-ggplot(elections, aes(y = repub_pct_20, x = repub_pct_16))
+ggplot(elections, aes(x = winner_20)) + 
+  geom_bar()
+ggplot(elections, aes(x = repub_pct_20)) + 
+  geom_histogram(color = "white")
+ggplot(elections, aes(x = repub_pct_20)) + 
+  geom_density()
 ```
 ```{r}
 # Add a layer of points for each county
@@ -105,5 +118,85 @@ ggplot(elections, aes(y = repub_pct_20, x = historical)) +
 # Side-by-side boxplots (defined below)
 ggplot(elections, aes(y = repub_pct_20, x = historical)) +
   geom_boxplot()
+```
+```{r}
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density()
+```
+```{r}
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density() +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+```
+```{r}
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density(alpha = 0.5) +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+```
+```{r}
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_density() +
+  scale_fill_manual(values = c("blue", "purple", "red")) +
+  facet_wrap(~ historical)
+```
+```{r}
+ggplot(elections, aes(x = repub_pct_20, fill = historical)) +
+  geom_histogram(color = "white") +
+  scale_fill_manual(values = c("blue", "purple", "red"))
+```
+```{r}
+ggplot(elections, aes(x = historical, fill = winner_20)) +
+  geom_bar()
+```
+```{r}
+ggplot(elections, aes(x = winner_20)) +
+  geom_bar() +
+  facet_wrap(~ historical)
+```
+```{r}
+ggplot(elections, aes(x = historical, fill = winner_20)) +
+  geom_bar(position = "dodge")
+```
+```{r}
+ggplot(elections, aes(x = historical, fill = winner_20)) +
+  geom_bar(position = "fill")
+```
+```{r}
+weather <- read.csv("https://mac-stat.github.io/data/weather_3_locations.csv")
+
+# How do 3pm temperatures (temp3pm) differ by location?
+ggplot(weather, aes(x = temp3pm, fill = location)) + 
+  geom_density(alpha = 0.5)
+```
+```{r}
+ggplot(weather, aes(y = temp3pm, x = location)) + 
+  geom_boxplot()
+```
+```{r}
+ggplot(weather, aes(y = temp3pm, x = temp9am)) + 
+  geom_point()
+
+```
+```{r}
+ggplot(weather, aes(x = location, fill = raintoday)) + 
+  geom_bar()
+```
+```{r}
+library(ggridges)
+
+# Make our first joy plot
+# THINK: What DON'T you like about this?
+ggplot(elections, aes(x = repub_pct_20, y = state_abbr)) + 
+  geom_density_ridges()
+```
+```{r}
+ggplot(elections, aes(x = repub_pct_20, y = fct_reorder(state_abbr, repub_pct_20))) + 
+  geom_density_ridges(alpha = 0.5)
+```
+```{r}
+ggplot(elections, aes(x = repub_pct_20, y = fct_reorder(state_abbr, repub_pct_20), fill = historical)) + 
+  geom_density_ridges(alpha = 0.5) + 
+  labs(y = "state", x = "2020 Republican support (%)") + 
+  scale_fill_manual(values = c("blue", "purple", "red"))
 ```
 

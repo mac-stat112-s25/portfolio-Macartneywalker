@@ -1,0 +1,74 @@
+---
+title: "joining ica.qmd"
+editor: visual
+---
+```{r}
+students_1 <- data.frame(
+  student = c("A", "B", "C"),
+  class = c("STAT 101", "GEOL 101", "ANTH 101")
+)
+
+# Check it out
+students_1
+```
+```{r}
+enrollments_1 <- data.frame(
+  class = c("STAT 101", "ART 101", "GEOL 101"),
+  enrollment = c(18, 17, 24)
+)
+
+# Check it out
+enrollments_1
+```
+```{r}
+library(tidyverse)
+students_1 |> 
+  left_join(enrollments_1)
+```
+```{r}
+students_1 |> 
+  inner_join(enrollments_1)
+```
+```{r}
+students_1 |> 
+  full_join(enrollments_1)
+```
+```{r}
+students_1 |> 
+  semi_join(enrollments_1)
+```
+```{r}
+students_1 |> 
+  anti_join(enrollments_1)
+```
+```{r}
+students_2 <- data.frame(
+  student = c("D", "E", "F"),
+  class = c("COMP 101", "BIOL 101", "POLI 101")
+)
+
+# Check it out
+students_2
+```
+```{r}
+students_2 |> 
+  left_join(enrollments_2, join_by(class == course))
+
+```
+```{r}
+# eval = FALSE: don't evaluate this chunk when knitting. it produces an error.
+students_2 |> 
+  cross_join(enrollments_2)
+```
+```{r}
+# Add student grades in each course
+students_2 |> 
+  left_join(enrollments_2, join_by(class == course))
+# Check it out
+students_3
+```
+```{r}
+students_2 |> 
+  left_join(join_by(course == c, enrollments_2)
+```
+

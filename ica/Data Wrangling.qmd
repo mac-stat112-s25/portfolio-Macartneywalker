@@ -1,0 +1,85 @@
+---
+title: "ica 2"
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+penguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv')
+
+# Check it out
+head(penguins)
+```
+
+```{r}
+
+# Get data on only Adelie penguins that weigh more than 4700g
+penguins|>
+  filter(species =="Adelie", body_mass_g >4700)
+
+# Get data on penguin body mass only
+
+# Show just the first 6 rows
+penguins |> 
+  select(body_mass_g) |> 
+  head()
+
+# Sort the penguins from smallest to largest body mass
+
+# Show just the first 6 rows
+penguins |> 
+  arrange(body_mass_g) |> 
+  head()
+
+
+# Calculate the average body mass across all penguins
+# Note: na.rm = TRUE removes the NAs from the calculation
+
+penguins|>
+  summarize(mean=mean(body_mass_g, na.rm = TRUE))
+
+# Calculate the average body mass by species
+
+penguins|>
+  group_by(species)|>
+  summarize(mean = mean(body_mass_g, na.rm=TRUE))
+
+
+# Create a new column that records body mass in kilograms, not grams
+# NOTE: there are 1000 g in 1 kg
+# Show just the first 6 rows
+penguins|>
+mutate(body_mass_kg = body_mass_g/1000)|>
+  head()
+```
+
+```{r}
+ggplot(penguins, aes(x=species))
+```
+
+```{r}
+penguins|>
+  count(species)
+```
+
+```{r}
+# Sort Gentoo penguins from biggest to smallest with respect to their 
+# bill length in cm (there are 10 mm in a cm)
+penguins|>
+  arrange(desc(bill_length_mm/10))
+  # head()
+  
+```
+
+a
+
+```{r}
+# Sort the species from smallest to biggest with respect to their 
+# average bill length in cm
+```
+
+```{r}
+ggplot(penguins, aes(y = body_mass_g, x = bill_length_mm, color = species)) + 
+  geom_point() + 
+  facet_wrap(~ sex)
+```

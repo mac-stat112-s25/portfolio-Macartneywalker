@@ -1,0 +1,106 @@
+---
+title: "reshaping ica"
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+penguins <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-07-28/penguins.csv')
+```
+
+```{r}
+penguin_avg <- penguins |>
+  group_by(species, sex) |>
+  summarize(avg = median(body_mass_g)) |>
+  na.omit() 
+```
+
+```{r}
+penguin_avg_wide <-penguin_avg |>
+pivot_wider(names_from = sex, values_from = avg)
+```
+
+```{r}
+# We can either communicate which variables we WANT to collect into a single column (female, male)
+penguin_avg_wide |> 
+  pivot_longer(cols = c(female, male), names_to = "sex", values_to = "avg_body_mass")
+```
+
+```{r}
+# Or which variable(s) we do NOT want to collect into a single column (sex)
+penguin_avg_wide |> 
+  pivot_longer(cols = -species, names_to = "sex", values_to = "avg_body_mass")
+```
+
+```{r}
+food <- data.frame(
+  customer = rep(c("A", "B"), each = 3),
+  restaurant = rep(c("Shish", "FrenchMeadow", "DunnBros"), 2),
+  order = c("falafel", "salad", "coffee", "baklava", "pastry", "tea")
+)
+food
+```
+
+```{r}
+more_food <- data.frame(
+  customer = c("C", "D"),
+  Shish = c("coffee", "maza"),
+  FrenchMeadow = c("soup", "sandwich"),
+  DunnBros = c("cookie", "coffee")
+)
+more_food
+```
+
+```{r}
+sleep_wide <- read.csv("https://mac-stat.github.io/data/sleep_wide.csv")
+
+head(sleep_wide)
+```
+
+```{r}
+# For cols, try 2 appproaches: using - and starts_with
+sleep_wide |>
+  pivot_longer(cols = -Subject, 
+               names_to = "days", 
+               values_to = "reaction time")
+```
+```{r}
+sleep_long <- sleep_wide |>
+  pivot_longer(cols = -Subject,
+               names_to = "day",
+               names_prefix = "day_",
+               values_to = "reaction_time")
+
+head(sleep_long)
+```
+```{r}
+sleep_long <- sleep_wide |>
+  pivot_longer(cols = -Subject,
+               names_to = "day",
+               names_prefix = "day_",
+               values_to = "reaction_time") |> 
+  mutate(Subject = as.factor(Subject), day = as.numeric(day))
+
+# Check it out
+# Same data, different class
+head(sleep_long)
+# Make a line plot of reaction time by day for each subject
+# Put these all on the same frame
+ggplot(sleep_long, aes(x = day, y = reaction_time, color = Subject)) +
+  geom_line()
+ggplot(sleep_long, aes(x = day, y = reaction_time, color = Subject)) +
+  geom_line() +
+  facet_wrap(~Subject)
+```
+```{r}
+sleep_long |>
+  pivot_wider(names_from = day, values_from = reaction_time) |>
+  head()
+```
+
+```{r}
+sleep_long |>
+  pivot_wider(names_from = -Subject, values_from = -Subject, names_prefix = "day_") |>
+  head()
+```
+
