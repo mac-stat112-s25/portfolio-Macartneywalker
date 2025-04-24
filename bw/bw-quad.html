@@ -180,6 +180,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bw-solo-proj.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">bw-solo-proj.qmd</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bw_exam_1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">exam #1</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../bw-exam-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">bw-exam-2</span></span></a>
+  </div>
+</li>
       </ul>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -194,25 +212,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-uni.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Univariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-bi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bivariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-multi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Mulivariate Viz</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/ica-spatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Spatial Viz</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica-dates.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">dates</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/reshaping ica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">reshaping ica</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/joining ica.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">joining ica.qmd</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ica/ica-strings.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">ica-strings.qmd</span></span></a>
   </div>
 </li>
       </ul>
@@ -255,7 +297,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3"></a>world_cup <span class="sc">|&gt;</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb3-5"><a href="#cb3-5"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> host, <span class="at">y =</span> attendance, <span class="at">x =</span> year, <span class="at">size =</span> winner )) <span class="sc">+</span> </span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year of Game"</span>, <span class="at">y =</span><span class="st">"Attendance"</span>, <span class="at">title =</span> <span class="st">"Attendance of World Cup Matches per Year with Indication of Hosts and Winners per Game."</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year of Game"</span>, <span class="at">y =</span><span class="st">"Attendance"</span>, <span class="at">title =</span> <span class="st">"Attendance of World Cup Matches per Year with Indication of Hosts and Winners per Game."</span> ) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">scale_fill_viridis_d</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Using size for a discrete variable is not advised.</code></pre>
 </div>
@@ -920,8 +963,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-23"><a href="#cb5-23"></a>world_cup <span class="sc">|&gt;</span></span>
 <span id="cb5-24"><a href="#cb5-24"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
 <span id="cb5-25"><a href="#cb5-25"></a>    <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> host, <span class="at">y =</span> attendance, <span class="at">x =</span> year, <span class="at">size =</span> winner )) <span class="sc">+</span> </span>
-<span id="cb5-26"><a href="#cb5-26"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year of Game"</span>, <span class="at">y =</span><span class="st">"Attendance"</span>, <span class="at">title =</span> <span class="st">"Attendance of World Cup Matches per Year with Indication of Hosts and Winners per Game."</span> )</span>
-<span id="cb5-27"><a href="#cb5-27"></a><span class="in">```</span></span>
+<span id="cb5-26"><a href="#cb5-26"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Year of Game"</span>, <span class="at">y =</span><span class="st">"Attendance"</span>, <span class="at">title =</span> <span class="st">"Attendance of World Cup Matches per Year with Indication of Hosts and Winners per Game."</span> ) <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27"></a><span class="fu">scale_fill_viridis_d</span>()</span>
+<span id="cb5-28"><a href="#cb5-28"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
