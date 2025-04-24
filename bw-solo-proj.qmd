@@ -4,6 +4,10 @@ editor: visual
 ---
 
 ```{r}
+#| echo: true
+#| warning: false
+#| error: false
+#| code-fold: true
 library(rnaturalearth)
 library(sf)
 library(maps)
@@ -14,12 +18,21 @@ library(readxl)
 ```
 
 ```{r}
+#| echo: true
+#| warning: false
+#| error: false
+#| code-fold: true
 world_boundaries <- ne_countries(returnclass = "sf")
   
 mbs_bird_records_by_county <- read_excel("solo project/mbs-bird-records-by-county.xlsx")
 ```
 
 ```{r}
+#| echo: true
+#| warning: false
+#| error: false
+#| code-fold: true
+
 mn_loons <- mbs_bird_records_by_county |>
   filter(`County Names` == "Common Loon") |>
  pivot_longer(cols = c(2:88),
