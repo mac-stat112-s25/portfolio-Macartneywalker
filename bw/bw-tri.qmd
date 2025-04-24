@@ -2,11 +2,19 @@
 title: "Trivariate Viz"
 ---
 ```{r}
+#| echo: true
+#| warning: false
+#| error: false
+#| code-fold: true
 library(ggplot2)
 library(mosaic)
 library(fivethirtyeight)
 ```
 ```{r}
+#| echo: true
+#| warning: false
+#| error: false
+#| code-fold: true
 data(bechdel)
 new_bechdel <- bechdel |>
   mutate(clean_test = factor(clean_test, c("nowomen", "notalk", "men", "dubious", "ok"))) |>
@@ -15,6 +23,10 @@ new_bechdel <- bechdel |>
 
 Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
 ```{r fig.width = 8, fig.height = 5.5}
+#| echo: true
+#| warning: false
+#| error: false
+#| code-fold: true
   #| fig_cap: "Bechdel Test results from Movies from 1969-2014 per Half Decades" 
   #| fig_alt: "the plot shows the results from the Bechdel test of movies from 1969-2014. Movies passing the test peaked in the 90s. 
 ggplot(new_bechdel, aes(fill = clean_test, x = half_decades)) +

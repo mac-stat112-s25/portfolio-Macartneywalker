@@ -3,12 +3,12 @@ title: "exam #1"
 editor: visual
 ---
 ```{r}
-tuesdata <- tt_load('2020-02-18')
-fc <- tuesdata$food_consumption
-
 library(tidytuesdayR)
 library(tidyverse)
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
 ```
+
 ```{r}
 dim(fc)
 summary(fc)

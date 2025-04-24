@@ -83,7 +83,7 @@ students_2 |>
 students_2 |> 
   left_join(enrollments_2, join_by(class == course))
 # Check it out
-students_3
+
 ```
 
 ```{r}
@@ -157,5 +157,5 @@ head(grades)
 # How many observations (rows) and variables (columns) are there in the grades data?
 dim(grades)
 # How many observations (rows) and variables (columns) are there in the courses data?
-dim(courses)
+
 ```
