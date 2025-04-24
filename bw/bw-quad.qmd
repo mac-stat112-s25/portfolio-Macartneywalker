@@ -17,6 +17,7 @@ Use this file to generate a professional looking **quadvariate** visualization. 
 world_cup |>
   ggplot() +
     geom_point(aes(color = host, y = attendance, x = year, size = winner )) + 
-  labs(x = "Year of Game", y ="Attendance", title = "Attendance of World Cup Matches per Year with Indication of Hosts and Winners per Game." )
+  labs(x = "Year of Game", y ="Attendance", title = "Attendance of World Cup Matches per Year with Indication of Hosts and Winners per Game." ) +
+scale_fill_viridis_d()
 ```
 

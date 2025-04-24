@@ -1,0 +1,52 @@
+---
+title: "bw-solo-proj.qmd"
+editor: visual
+---
+
+```{r}
+library(rnaturalearth)
+library(sf)
+library(maps)
+library(mosaic)
+library(gplots)
+library(tidyverse)
+library(readxl)
+```
+
+```{r}
+world_boundaries <- ne_countries(returnclass = "sf")
+  
+mbs_bird_records_by_county <- read_excel("solo project/mbs-bird-records-by-county.xlsx")
+```
+
+```{r}
+mn_loons <- mbs_bird_records_by_county |>
+  filter(`County Names` == "Common Loon") |>
+ pivot_longer(cols = c(2:88),
+               names_to = "Counties",
+               values_to = "Sitings") |>
+  mutate(col1 = tolower(Counties)) |>
+  mutate_if(is.numeric, ~replace(., is.na(.), 0))
+
+midwest_boundaries <- st_as_sf(
+  maps::map("county",
+            region = c("minnesota"), 
+            fill = TRUE, plot = FALSE))
+
+midwest_boundaries2 <- midwest_boundaries|>
+  mutate(ID = str_replace(ID, "minnesota,", ""))
+
+midwest_boundaries2 |>
+  left_join(mn_loons |> select(col1, Sitings), join_by(ID == col1 ))
+
+#| fig-cap: "A Map of Common Loon Sitings in Minnesota counties"
+#| fig-alt: "The more North and Rural the county is the more Loon sitings there are." 
+midwest_boundaries2 |>
+  left_join(mn_loons |> select(col1, Sitings), join_by(ID == col1 )) |>
+ ggplot() +
+   geom_sf(aes(fill = Sitings), color = "red") +
+   theme_map() +
+  scale_fill_viridis_c(option = "magma", direction = -1) +
+  labs(title = "Map of Common Loon Sitings in Minnesota counties")
+
+```

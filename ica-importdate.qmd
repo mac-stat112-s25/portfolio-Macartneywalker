@@ -1,0 +1,25 @@
+---
+title: "data import"
+editor: visual
+---
+
+```{r}
+library(tidyverse)
+imdb_messy <- read_csv("~/Documents/GitHub/portfolio-Macartneywalker/data/imdb_5000_messy.csv")
+```
+```{r}
+imdb_messy |>
+  mutate(across(where(is.character), as.factor)) |>  # convert characters to factors in order to summarize
+  summary()
+
+dim(imdb_messy)
+
+# Then count the number of NAs in each column
+colSums(is.na(imdb_messy))
+
+
+```
+```{r}
+
+```
+

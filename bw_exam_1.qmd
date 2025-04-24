@@ -1,0 +1,41 @@
+---
+title: "exam #1"
+editor: visual
+---
+```{r}
+tuesdata <- tt_load('2020-02-18')
+fc <- tuesdata$food_consumption
+
+library(tidytuesdayR)
+library(tidyverse)
+```
+```{r}
+dim(fc)
+summary(fc)
+head(fc)
+```
+```{r}
+fc |>
+  select(-co2_emmission)
+```
+
+```{r}
+#| fig-cap: "Consumption by Country, colored by Food Category"
+#| fig-alt: "Lamb, Goat, and Milk are the most Consumed."
+#| fig-width: 10
+ggplot(fc, aes(x = country, y = consumption, color = food_category)) +
+  geom_point(alpha = .25) +
+ scale_fill_viridis_d() +
+  labs(x = "Country", y = "Consumption", color = "Food Category", title = " Consumption by Country, colored by Food Category")
+```
+```{r}
+#| fig-cap: "Consumption by Country, colored by Food Category"
+#| fig-alt: "Rice and Wheat are the most Consumed."
+#| fig-width: 10
+
+ggplot(fc, aes(x = country, y = consumption)) +
+  geom_point(alpha = .25) +
+  facet_wrap(~food_category) +
+  labs(x = "Country", y = "Consumption", title = " Consumption by Country, faceted by Food Category")
+```
+
