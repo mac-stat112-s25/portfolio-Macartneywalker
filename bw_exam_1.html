@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Your Name Here</a> 
+      <a href="./">Macartney Walker-Data Science Portfolio</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bw/bw-quad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Vizualization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ica-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">dates</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dates</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ica/joining ica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">joining ica.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Joining</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -270,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./bw/bw-uni.html">Best Work</a></li><li class="breadcrumb-item"><a href="./bw_exam_1.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exam 1</span></a></li></ol></nav><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title">
 <span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Exam 1</span>
-</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
 </div>
 
 
@@ -285,39 +285,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header><div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidytuesdayR)</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>---- Compiling #TidyTuesday Information for 2020-02-18 ----
---- There is 1 file available ---
-
-
-── Downloading files ───────────────────────────────────────────────────────────
-
-  1 of 1: "food_consumption.csv"</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>fc <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>food_consumption</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidytuesdayR)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>fc <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>food_consumption</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">dim</span>(fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">dim</span>(fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>[1] 1430    4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">summary</span>(fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">summary</span>(fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code>   country          food_category       consumption      co2_emmission    
  Length:1430        Length:1430        Min.   :  0.000   Min.   :   0.00  
  Class :character   Class :character   1st Qu.:  2.365   1st Qu.:   5.21  
@@ -326,8 +306,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
                                        3rd Qu.: 28.133   3rd Qu.:  62.60  
                                        Max.   :430.760   Max.   :1712.00  </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">head</span>(fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">head</span>(fc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country   food_category consumption co2_emmission
   &lt;chr&gt;     &lt;chr&gt;               &lt;dbl&gt;         &lt;dbl&gt;
@@ -340,9 +320,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>fc <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>co2_emmission)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>fc <span class="sc">|&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="fu">select</span>(<span class="sc">-</span>co2_emmission)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,430 × 3
    country   food_category            consumption
    &lt;chr&gt;     &lt;chr&gt;                          &lt;dbl&gt;
@@ -360,23 +340,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption, <span class="at">color =</span> food_category)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a> <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Consumption"</span>, <span class="at">color =</span> <span class="st">"Food Category"</span>, <span class="at">title =</span> <span class="st">" Consumption by Country, colored by Food Category"</span>, )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption, <span class="at">color =</span> food_category)) <span class="sc">+</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a> <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Consumption"</span>, <span class="at">color =</span> <span class="st">"Food Category"</span>, <span class="at">title =</span> <span class="st">" Consumption by Country, colored by Food Category"</span>, <span class="at">alt =</span> <span class="st">""</span>, <span class="at">caption =</span> <span class="st">"Data from Tidytuesday"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
-<figure class="figure"><p><img src="bw_exam_1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" alt="Lamb, Goat, and Milk are the most Consumed." width="3840"></p>
+<figure class="figure"><p><img src="bw_exam_1_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" alt="Lamb, Goat, and Milk are the most Consumed." width="1440"></p>
 <figcaption>Consumption by Country, colored by Food Category</figcaption></figure>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption)) <span class="sc">+</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a>  </span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category) <span class="sc">+</span></span>
-<span id="cb15-5"><a href="#cb15-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Consumption"</span>, <span class="at">title =</span> <span class="st">" Consumption by Country, faceted by Food Category"</span>, )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption)) <span class="sc">+</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>  </span>
+<span id="cb11-3"><a href="#cb11-3"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category) <span class="sc">+</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Consumption"</span>, <span class="at">title =</span> <span class="st">" Consumption by Country, faceted by Food Category"</span>, )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="bw_exam_1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" alt="Rice and Wheat are the most Consumed." width="960"></p>
@@ -1019,47 +999,63 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb16" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">---</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="an">title:</span><span class="co"> "Exam 1"</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="co">---</span></span>
-<span id="cb16-7"><a href="#cb16-7"></a><span class="in">```{r}</span></span>
-<span id="cb16-8"><a href="#cb16-8"></a><span class="fu">library</span>(tidytuesdayR)</span>
-<span id="cb16-9"><a href="#cb16-9"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb16-10"><a href="#cb16-10"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span>
-<span id="cb16-11"><a href="#cb16-11"></a>fc <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>food_consumption</span>
-<span id="cb16-12"><a href="#cb16-12"></a><span class="in">```</span></span>
-<span id="cb16-13"><a href="#cb16-13"></a></span>
-<span id="cb16-16"><a href="#cb16-16"></a><span class="in">```{r}</span></span>
-<span id="cb16-17"><a href="#cb16-17"></a><span class="fu">dim</span>(fc)</span>
-<span id="cb16-18"><a href="#cb16-18"></a><span class="fu">summary</span>(fc)</span>
-<span id="cb16-19"><a href="#cb16-19"></a><span class="fu">head</span>(fc)</span>
-<span id="cb16-20"><a href="#cb16-20"></a><span class="in">```</span></span>
-<span id="cb16-23"><a href="#cb16-23"></a><span class="in">```{r}</span></span>
-<span id="cb16-24"><a href="#cb16-24"></a>fc <span class="sc">|&gt;</span></span>
-<span id="cb16-25"><a href="#cb16-25"></a>  <span class="fu">select</span>(<span class="sc">-</span>co2_emmission)</span>
-<span id="cb16-26"><a href="#cb16-26"></a><span class="in">```</span></span>
-<span id="cb16-27"><a href="#cb16-27"></a></span>
-<span id="cb16-30"><a href="#cb16-30"></a><span class="in">```{r}</span></span>
-<span id="cb16-31"><a href="#cb16-31"></a><span class="co">#| fig-cap: "Consumption by Country, colored by Food Category"</span></span>
-<span id="cb16-32"><a href="#cb16-32"></a><span class="co">#| fig-alt: "Lamb, Goat, and Milk are the most Consumed."</span></span>
-<span id="cb16-33"><a href="#cb16-33"></a><span class="co">#| fig-width: 40</span></span>
-<span id="cb16-34"><a href="#cb16-34"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption, <span class="at">color =</span> food_category)) <span class="sc">+</span></span>
-<span id="cb16-35"><a href="#cb16-35"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb16-36"><a href="#cb16-36"></a> <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb16-37"><a href="#cb16-37"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Consumption"</span>, <span class="at">color =</span> <span class="st">"Food Category"</span>, <span class="at">title =</span> <span class="st">" Consumption by Country, colored by Food Category"</span>, )</span>
-<span id="cb16-38"><a href="#cb16-38"></a><span class="in">```</span></span>
-<span id="cb16-41"><a href="#cb16-41"></a><span class="in">```{r}</span></span>
-<span id="cb16-42"><a href="#cb16-42"></a><span class="co">#| fig-cap: "Consumption by Country, colored by Food Category"</span></span>
-<span id="cb16-43"><a href="#cb16-43"></a><span class="co">#| fig-alt: "Rice and Wheat are the most Consumed."</span></span>
-<span id="cb16-44"><a href="#cb16-44"></a><span class="co">#| fig-width: 10</span></span>
-<span id="cb16-45"><a href="#cb16-45"></a></span>
-<span id="cb16-46"><a href="#cb16-46"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption)) <span class="sc">+</span></span>
-<span id="cb16-47"><a href="#cb16-47"></a>  </span>
-<span id="cb16-48"><a href="#cb16-48"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
-<span id="cb16-49"><a href="#cb16-49"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category) <span class="sc">+</span></span>
-<span id="cb16-50"><a href="#cb16-50"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Consumption"</span>, <span class="at">title =</span> <span class="st">" Consumption by Country, faceted by Food Category"</span>, )</span>
-<span id="cb16-51"><a href="#cb16-51"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb12" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="an">title:</span><span class="co"> "Exam 1"</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="co">---</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="in">```{r}</span></span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="co">#| echo: true</span></span>
+<span id="cb12-9"><a href="#cb12-9"></a><span class="co">#| warning: false</span></span>
+<span id="cb12-10"><a href="#cb12-10"></a><span class="co">#| error: false</span></span>
+<span id="cb12-11"><a href="#cb12-11"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a><span class="fu">library</span>(tidytuesdayR)</span>
+<span id="cb12-13"><a href="#cb12-13"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb12-14"><a href="#cb12-14"></a>tuesdata <span class="ot">&lt;-</span> <span class="fu">tt_load</span>(<span class="st">'2020-02-18'</span>)</span>
+<span id="cb12-15"><a href="#cb12-15"></a>fc <span class="ot">&lt;-</span> tuesdata<span class="sc">$</span>food_consumption</span>
+<span id="cb12-16"><a href="#cb12-16"></a><span class="in">```</span></span>
+<span id="cb12-17"><a href="#cb12-17"></a></span>
+<span id="cb12-20"><a href="#cb12-20"></a><span class="in">```{r}</span></span>
+<span id="cb12-21"><a href="#cb12-21"></a><span class="co">#| echo: true</span></span>
+<span id="cb12-22"><a href="#cb12-22"></a><span class="co">#| warning: false</span></span>
+<span id="cb12-23"><a href="#cb12-23"></a><span class="co">#| error: false</span></span>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb12-25"><a href="#cb12-25"></a><span class="fu">dim</span>(fc)</span>
+<span id="cb12-26"><a href="#cb12-26"></a><span class="fu">summary</span>(fc)</span>
+<span id="cb12-27"><a href="#cb12-27"></a><span class="fu">head</span>(fc)</span>
+<span id="cb12-28"><a href="#cb12-28"></a><span class="in">```</span></span>
+<span id="cb12-31"><a href="#cb12-31"></a><span class="in">```{r}</span></span>
+<span id="cb12-32"><a href="#cb12-32"></a><span class="co">#| echo: true</span></span>
+<span id="cb12-33"><a href="#cb12-33"></a><span class="co">#| warning: false</span></span>
+<span id="cb12-34"><a href="#cb12-34"></a><span class="co">#| error: false</span></span>
+<span id="cb12-35"><a href="#cb12-35"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb12-36"><a href="#cb12-36"></a>fc <span class="sc">|&gt;</span></span>
+<span id="cb12-37"><a href="#cb12-37"></a>  <span class="fu">select</span>(<span class="sc">-</span>co2_emmission)</span>
+<span id="cb12-38"><a href="#cb12-38"></a><span class="in">```</span></span>
+<span id="cb12-39"><a href="#cb12-39"></a></span>
+<span id="cb12-42"><a href="#cb12-42"></a><span class="in">```{r}</span></span>
+<span id="cb12-43"><a href="#cb12-43"></a><span class="co">#| echo: true</span></span>
+<span id="cb12-44"><a href="#cb12-44"></a><span class="co">#| warning: false</span></span>
+<span id="cb12-45"><a href="#cb12-45"></a><span class="co">#| error: false</span></span>
+<span id="cb12-46"><a href="#cb12-46"></a><span class="co">#| code-fold: true</span></span>
+<span id="cb12-47"><a href="#cb12-47"></a><span class="co">#| fig-cap: "Consumption by Country, colored by Food Category"</span></span>
+<span id="cb12-48"><a href="#cb12-48"></a><span class="co">#| fig-alt: "Lamb, Goat, and Milk are the most Consumed."</span></span>
+<span id="cb12-49"><a href="#cb12-49"></a><span class="co">#| fig-width: 15</span></span>
+<span id="cb12-50"><a href="#cb12-50"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption, <span class="at">color =</span> food_category)) <span class="sc">+</span></span>
+<span id="cb12-51"><a href="#cb12-51"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb12-52"><a href="#cb12-52"></a> <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
+<span id="cb12-53"><a href="#cb12-53"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Consumption"</span>, <span class="at">color =</span> <span class="st">"Food Category"</span>, <span class="at">title =</span> <span class="st">" Consumption by Country, colored by Food Category"</span>, <span class="at">alt =</span> <span class="st">""</span>, <span class="at">caption =</span> <span class="st">"Data from Tidytuesday"</span> )</span>
+<span id="cb12-54"><a href="#cb12-54"></a><span class="in">```</span></span>
+<span id="cb12-57"><a href="#cb12-57"></a><span class="in">```{r}</span></span>
+<span id="cb12-58"><a href="#cb12-58"></a><span class="co">#| fig-cap: "Consumption by Country, colored by Food Category"</span></span>
+<span id="cb12-59"><a href="#cb12-59"></a><span class="co">#| fig-alt: "Rice and Wheat are the most Consumed."</span></span>
+<span id="cb12-60"><a href="#cb12-60"></a><span class="co">#| fig-width: 10</span></span>
+<span id="cb12-61"><a href="#cb12-61"></a></span>
+<span id="cb12-62"><a href="#cb12-62"></a><span class="fu">ggplot</span>(fc, <span class="fu">aes</span>(<span class="at">x =</span> country, <span class="at">y =</span> consumption)) <span class="sc">+</span></span>
+<span id="cb12-63"><a href="#cb12-63"></a>  </span>
+<span id="cb12-64"><a href="#cb12-64"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> .<span class="dv">25</span>) <span class="sc">+</span></span>
+<span id="cb12-65"><a href="#cb12-65"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>food_category) <span class="sc">+</span></span>
+<span id="cb12-66"><a href="#cb12-66"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Country"</span>, <span class="at">y =</span> <span class="st">"Consumption"</span>, <span class="at">title =</span> <span class="st">" Consumption by Country, faceted by Food Category"</span>, )</span>
+<span id="cb12-67"><a href="#cb12-67"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

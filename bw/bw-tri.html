@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Your Name Here</a> 
+      <a href="../">Macartney Walker-Data Science Portfolio</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../bw/bw-quad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Vizualization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">dates</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dates</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ica/joining ica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">joining ica.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Joining</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -297,14 +297,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4"></a>  <span class="fu">mutate</span>(<span class="at">half_decades =</span> <span class="fu">cut</span>(year, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1969</span>, <span class="dv">2014</span>, <span class="at">by =</span> <span class="dv">5</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Use this file to generate a professional looking <strong>trivariate</strong> visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</p>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>  <span class="co">#| fig_cap: "Bechdel Test results from Movies from 1969-2014 per Half Decades" </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="co">#| fig_alt: "the plot shows the results from the Bechdel test of movies from 1969-2014. Movies passing the test peaked in the 90s. </span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">ggplot</span>(new_bechdel, <span class="fu">aes</span>(<span class="at">fill =</span> clean_test, <span class="at">x =</span> half_decades)) <span class="sc">+</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Scores"</span>, <span class="at">x =</span> <span class="st">"Half Decades"</span>, <span class="at">legend =</span> <span class="st">"Results"</span>, <span class="at">title =</span> <span class="st">"Results of Bechdel Test in movies from 1969-2014"</span>) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a>  <span class="fu">scale_fill_viridis_d</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">ggplot</span>(new_bechdel, <span class="fu">aes</span>(<span class="at">fill =</span> clean_test, <span class="at">x =</span> half_decades)) <span class="sc">+</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Scores"</span>, <span class="at">x =</span> <span class="st">"Half Decades"</span>, <span class="at">color =</span> <span class="st">"Results"</span>, <span class="at">title =</span> <span class="st">"Results of Bechdel Test in movies from 1969-2014"</span>, <span class="at">alt =</span> <span class="st">"This plot shows the results from the Bechdel test of movies from 1969-2014. Movies passing the test peaked in the 90s."</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="fu">scale_fill_viridis_d</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="bw-tri_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="768"></p>
@@ -942,8 +939,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../bw/bw-quad.html" class="pagination-link" aria-label="Quadvariate Viz">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../bw/bw-quad.html" class="pagination-link" aria-label="Quadvariate Vizualization">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Vizualization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
@@ -970,20 +967,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-25"><a href="#cb4-25"></a>  <span class="fu">mutate</span>(<span class="at">half_decades =</span> <span class="fu">cut</span>(year, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1969</span>, <span class="dv">2014</span>, <span class="at">by =</span> <span class="dv">5</span>)))</span>
 <span id="cb4-26"><a href="#cb4-26"></a><span class="in">```</span></span>
 <span id="cb4-27"><a href="#cb4-27"></a></span>
-<span id="cb4-28"><a href="#cb4-28"></a>Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.</span>
+<span id="cb4-28"><a href="#cb4-28"></a></span>
 <span id="cb4-29"><a href="#cb4-29"></a><span class="in">```{r fig.width = 8, fig.height = 5.5}</span></span>
 <span id="cb4-30"><a href="#cb4-30"></a><span class="in">#| echo: true</span></span>
 <span id="cb4-31"><a href="#cb4-31"></a><span class="in">#| warning: false</span></span>
 <span id="cb4-32"><a href="#cb4-32"></a><span class="in">#| error: false</span></span>
 <span id="cb4-33"><a href="#cb4-33"></a><span class="in">#| code-fold: true</span></span>
-<span id="cb4-34"><a href="#cb4-34"></a><span class="in">  #| fig_cap: "Bechdel Test results from Movies from 1969-2014 per Half Decades" </span></span>
-<span id="cb4-35"><a href="#cb4-35"></a><span class="in">  #| fig_alt: "the plot shows the results from the Bechdel test of movies from 1969-2014. Movies passing the test peaked in the 90s. </span></span>
-<span id="cb4-36"><a href="#cb4-36"></a><span class="in">ggplot(new_bechdel, aes(fill = clean_test, x = half_decades)) +</span></span>
-<span id="cb4-37"><a href="#cb4-37"></a><span class="in">  geom_bar(position = "fill") +</span></span>
-<span id="cb4-38"><a href="#cb4-38"></a><span class="in">  labs(y = "Scores", x = "Half Decades", legend = "Results", title = "Results of Bechdel Test in movies from 1969-2014") +</span></span>
-<span id="cb4-39"><a href="#cb4-39"></a><span class="in">  scale_fill_viridis_d() </span></span>
-<span id="cb4-40"><a href="#cb4-40"></a><span class="in">```</span></span>
-<span id="cb4-41"><a href="#cb4-41"></a></span>
+<span id="cb4-34"><a href="#cb4-34"></a><span class="in">ggplot(new_bechdel, aes(fill = clean_test, x = half_decades)) +</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a><span class="in">  geom_bar(position = "fill") +</span></span>
+<span id="cb4-36"><a href="#cb4-36"></a><span class="in">  labs(y = "Scores", x = "Half Decades", color = "Results", title = "Results of Bechdel Test in movies from 1969-2014", alt = "This plot shows the results from the Bechdel test of movies from 1969-2014. Movies passing the test peaked in the 90s.") +</span></span>
+<span id="cb4-37"><a href="#cb4-37"></a><span class="in">  scale_fill_viridis_d() </span></span>
+<span id="cb4-38"><a href="#cb4-38"></a><span class="in">```</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

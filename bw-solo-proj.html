@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Your Name Here</a> 
+      <a href="./">Macartney Walker-Data Science Portfolio</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./bw/bw-quad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Viz</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Quadvariate Vizualization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ica-dates.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">dates</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dates</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -248,7 +248,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./ica/joining ica.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">joining ica.qmd</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Joining</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -346,7 +346,7 @@ First 10 features:
 <span id="cb5-6"><a href="#cb5-6"></a>   <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Sightings), <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a>   <span class="fu">theme_map</span>() <span class="sc">+</span></span>
 <span id="cb5-8"><a href="#cb5-8"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"magma"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Map of Common Loon Sightings in Minnesota counties"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-9"><a href="#cb5-9"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Map of Common Loon Sightings in Minnesota counties"</span>, <span class="at">caption =</span><span class="st">"Data from Minnesota Department of Natural Resources and rnaturalearth"</span>, <span class="at">alt =</span> <span class="st">"Map of Minesota Counties colored by Loon sightings. The more North and Rural the county is the more Loon sitings there are."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="bw-solo-proj_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
@@ -1051,11 +1051,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-66"><a href="#cb6-66"></a>   <span class="fu">geom_sf</span>(<span class="fu">aes</span>(<span class="at">fill =</span> Sightings), <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
 <span id="cb6-67"><a href="#cb6-67"></a>   <span class="fu">theme_map</span>() <span class="sc">+</span></span>
 <span id="cb6-68"><a href="#cb6-68"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"magma"</span>, <span class="at">direction =</span> <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb6-69"><a href="#cb6-69"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Map of Common Loon Sightings in Minnesota counties"</span>)</span>
+<span id="cb6-69"><a href="#cb6-69"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Map of Common Loon Sightings in Minnesota counties"</span>, <span class="at">caption =</span><span class="st">"Data from Minnesota Department of Natural Resources and rnaturalearth"</span>, <span class="at">alt =</span> <span class="st">"Map of Minesota Counties colored by Loon sightings. The more North and Rural the county is the more Loon sitings there are."</span>)</span>
 <span id="cb6-70"><a href="#cb6-70"></a></span>
 <span id="cb6-71"><a href="#cb6-71"></a><span class="in">```</span></span>
-<span id="cb6-72"><a href="#cb6-72"></a></span>
-<span id="cb6-73"><a href="#cb6-73"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
